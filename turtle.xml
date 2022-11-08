@@ -1,0 +1,7 @@
+<movement>
+        <repeat>
+            <set speed="uniform(80,100)"/>
+            <moveto x="0" y="0"/>
+            <moveto x="uniform(0,400)" y="uniform(0,400)"/>
+        </repeat>
+</movement>
