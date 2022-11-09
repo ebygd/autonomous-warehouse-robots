@@ -3,11 +3,13 @@ import inet.node.inet.ManetRouter;
 import inet.node.gpsr.GpsrRouter;
 import inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarRadioMedium;
 import inet.visualizer.common.IntegratedMultiVisualizer;
+import inet.environment.common.PhysicalEnvironment;
+
 
 network ManetprotocolsShowcaseB
 {
     parameters:
-        @display("bgb=400,400");
+        @display("bgb=500,500");
         @statistic[numRcvdPk](source=count(source.app[0].pingRxSeq); record=figure; targetFigure=numRcvdPkCounter; checkSignals=false);
         @figure[numRcvdPkCounter](type=counter; transform=scale(0.5); pos=50,300; label="Received ping replies"; decimalPlaces=4);
         @statistic[numLost](source=count(source.app[0].numLost); record=figure; targetFigure=numLostPkCounter; checkSignals=false);
@@ -15,19 +17,19 @@ network ManetprotocolsShowcaseB
 
     submodules:
         source: ManetRouter {
-            @display("p=104,335");
+            @display("p=245,350");
         }
         node1: ManetRouter {
             @display("p=104,226");
         }
         node2: ManetRouter {
-            @display("p=175,140");
+            @display("p=265.104,203.61601");
         }
         node3: ManetRouter {
-            @display("p=238,276");
+            @display("p=90.72,369.936");
         }
         node4: ManetRouter {
-            @display("p=312,196");
+            @display("p=364.896,243.936");
         }
         node6: ManetRouter {
             @display("p=147,67");
@@ -35,17 +37,35 @@ network ManetprotocolsShowcaseB
         node7: ManetRouter {
             @display("p=60,125");
         }
+        node8: ManetRouter {
+            @display("p=413.28,66.528");
+        }
+        node9: ManetRouter {
+            @display("p=174.384,164.304");
+        }
+        node10: ManetRouter {
+            @display("p=194.544,301.392");
+        }
+        node11: ManetRouter {
+            @display("p=344.73602,340.704");
+        }
+        node12: ManetRouter {
+            @display("p=393.12003,164.304");
+        }
         destination: ManetRouter {
             @display("p=292,80");
         }
         radioMedium: Ieee80211ScalarRadioMedium {
-            @display("p=38,28");
+            @display("p=474.768,346.752");
         }
         configurator: Ipv4NetworkConfigurator {
-            @display("p=38.461544,66.863914");
+            @display("p=474.768,408.24002");
         }
         visualizer: IntegratedMultiVisualizer {
-            @display("p=38.461544,106.50889");
+            @display("p=474.768,470.73602");
+        }
+        physicalEnvironment: PhysicalEnvironment {
+            @display("p=477.79202,288.288");
         }
 }
 
