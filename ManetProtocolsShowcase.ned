@@ -10,62 +10,62 @@ network ManetprotocolsShowcaseB
 {
     parameters:
         @display("bgb=500,500");
-        @statistic[numRcvdPk](source=count(source.app[0].pingRxSeq); record=figure; targetFigure=numRcvdPkCounter; checkSignals=false);
-        @figure[numRcvdPkCounter](type=counter; transform=scale(0.5); pos=50,300; label="Received ping replies"; decimalPlaces=4);
-        @statistic[numLost](source=count(source.app[0].numLost); record=figure; targetFigure=numLostPkCounter; checkSignals=false);
-        @figure[numLostPkCounter](type=counter; transform=scale(0.5); pos=50,400; label="Pings lost"; decimalPlaces=4);
+//        @statistic[numRcvdPk](source=count(source.app[0].pingRxSeq); record=figure; targetFigure=numRcvdPkCounter; checkSignals=false);
+//        @figure[numRcvdPkCounter](type=counter; transform=scale(0.5); pos=50,300; label="Received ping replies"; decimalPlaces=4);
+//        @statistic[numLost](source=count(source.app[0].numLost); record=figure; targetFigure=numLostPkCounter; checkSignals=false);
+//        @figure[numLostPkCounter](type=counter; transform=scale(0.5); pos=50,400; label="Pings lost"; decimalPlaces=4);
 
     submodules:
         source: ManetRouter {
-            @display("p=245,350");
+            @display("p=245,350;i=abstract/accesspoint");
         }
         node1: ManetRouter {
-            @display("p=104,226");
+            @display("p=104,226;i=spot/spot");
         }
         node2: ManetRouter {
-            @display("p=265.104,203.61601");
+            @display("p=265.104,203.61601;i=spot/spot");
         }
         node3: ManetRouter {
-            @display("p=90.72,369.936");
+            @display("p=90.72,369.936;i=spot/spot");
         }
         node4: ManetRouter {
-            @display("p=364.896,243.936");
+            @display("p=364.896,243.936;i=spot/spot");
         }
         node6: ManetRouter {
-            @display("p=147,67");
+            @display("p=147,67;i=spot/spot");
         }
         node7: ManetRouter {
-            @display("p=60,125");
+            @display("p=60,125;i=spot/spot");
         }
         node8: ManetRouter {
-            @display("p=413.28,66.528");
+            @display("p=413.28,66.528;i=spot/spot");
         }
         node9: ManetRouter {
-            @display("p=174.384,164.304");
+            @display("p=174.384,164.304;i=spot/spot");
         }
         node10: ManetRouter {
-            @display("p=194.544,301.392");
+            @display("p=194.544,301.392;i=spot/spot");
         }
         node11: ManetRouter {
-            @display("p=344.73602,340.704");
+            @display("p=344.73602,340.704;i=spot/spot");
         }
         node12: ManetRouter {
-            @display("p=393.12003,164.304");
+            @display("p=393.12003,164.304;i=spot/spot");
         }
         destination: ManetRouter {
-            @display("p=292,80");
+            @display("p=292,80;i=spot/spot");
         }
         radioMedium: Ieee80211ScalarRadioMedium {
-            @display("p=474.768,346.752");
+            @display("p=436.46402,190.51201");
         }
         configurator: Ipv4NetworkConfigurator {
-            @display("p=474.768,408.24002");
+            @display("p=436.46402,252");
         }
         visualizer: IntegratedMultiVisualizer {
-            @display("p=474.768,470.73602");
+            @display("p=436.46402,314.496");
         }
         physicalEnvironment: PhysicalEnvironment {
-            @display("p=477.79202,288.288");
+            @display("p=439.488,132.048");
         }
 }
 
